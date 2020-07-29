@@ -1,6 +1,8 @@
 # Bulonera
 Api bulonera skz
 
+Desarrollada en Java
+
 » Sistema de Gestion Comercial
 
 *Descripcion del sistema a desarrollar 
