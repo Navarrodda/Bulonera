@@ -10,6 +10,8 @@ de ventas secas por semana. La aplicacion contara con una lista de stocks y una
 lista de provedores de mercaderia, tambien tener una lista de clientes que el mismo 
 tendra una cuentaen la que figurara si adeuda dinero y los productos comprados.
 
+Esta contara con un login por parte del usuario.
+
 La aplicacion debera tener una parte de cobro y que calcule el iva y tipo de 
 consumidor(Ejemplo consumidor final)
 
