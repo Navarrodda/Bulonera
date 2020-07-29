@@ -1,7 +1,7 @@
 # Bulonera
 Api bulonera skz
 
-Desarrollada en Java
+Desarrollada en Java + Spring
 
 » Sistema de Gestion Comercial
 
