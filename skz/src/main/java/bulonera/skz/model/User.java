@@ -22,7 +22,7 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "surname")
@@ -40,7 +40,7 @@ public class User {
     @Column(name = "telephone", nullable = false, unique = true)
     private String telephone;
 
-    @Column(name = "user_type", columnDefinition = "varchar(20) default 'CUSTOMER'")
+    @Column(name = "user_type", nullable = false, columnDefinition = "varchar(20) default 'CUSTOMER'")
     @Enumerated(value = EnumType.STRING)
     private UserType userType;
 
