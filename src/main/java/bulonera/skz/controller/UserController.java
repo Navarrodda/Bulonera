@@ -1,8 +1,13 @@
 package bulonera.skz.controller;
 
+import bulonera.skz.dto.LoginRequestDto;
 import bulonera.skz.exceptions.ExistingUser;
+import bulonera.skz.exceptions.InvalidLoginException;
+import bulonera.skz.exceptions.UserException;
+import bulonera.skz.exceptions.ValidationException;
 import bulonera.skz.model.User;
 import bulonera.skz.service.UserService;
+import bulonera.skz.session.SessionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +27,9 @@ public class UserController {
 
     public ResponseEntity addUser(User user) throws ExistingUser {
         return this.userService.addUser(user);
+    }
+
+    public ResponseEntity login(LoginRequestDto loginRequestDto, SessionManager sessionManager) throws ValidationException, UserException, InvalidLoginException {
+        return this.userService.login(loginRequestDto, sessionManager);
     }
 }
