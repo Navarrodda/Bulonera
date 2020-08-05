@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Bulonera.iml" filepath="$PROJECT_DIR$/.idea/Bulonera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/skz/skz.iml" filepath="$PROJECT_DIR$/skz/skz.iml" />
-    </modules>
-  </component>
-</project>
