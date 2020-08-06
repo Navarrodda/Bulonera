@@ -20,9 +20,6 @@ public class Product {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "description")
-    private String description;
-
     @Column(name = "name")
     private String name;
 
