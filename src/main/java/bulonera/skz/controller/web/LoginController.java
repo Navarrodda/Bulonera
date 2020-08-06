@@ -11,10 +11,7 @@ import bulonera.skz.model.User;
 import bulonera.skz.session.SessionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
@@ -38,5 +35,11 @@ public class LoginController {
     public ResponseEntity login(@RequestBody LoginRequestDto loginRequestDto) throws ValidationException, UserException, InvalidLoginException {
         return this.userController.login(loginRequestDto,sessionManager); }
 
+
+    @PostMapping("/logout")
+    public ResponseEntity logout(@RequestHeader("Authorization") String token) {
+        this.sessionManager.sessionRemove(token);
+        return ResponseEntity.ok().build();
+    }
 
 }
