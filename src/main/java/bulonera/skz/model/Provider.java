@@ -22,6 +22,9 @@ public class Provider {
     @Column(name = "name",nullable = false)
     private String name;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "direction")
     private String direction;
 

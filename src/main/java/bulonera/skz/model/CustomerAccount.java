@@ -21,14 +21,22 @@ public class CustomerAccount {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "date_account")
-    private Date date;
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "email", unique = true)
+    private String email;
+
+    @Column(name = "telephone", unique = true)
+    private String telephone;
 
     @Column(name = "balance_you_owe")
     private boolean balanceYouOwe;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference
-    @JoinColumn(name="id_bill")
-    private  Bill bill;
+    @Column(name = "positive_balance")
+    private boolean positiveBalance;
+
 }
