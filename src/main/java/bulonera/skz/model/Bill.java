@@ -18,22 +18,14 @@ public class Bill {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference
-    @JoinColumn(name="id_customer_account")
-    private  CustomerAccount customerAccount;
+    @Column(name = "number")
+    private int number;
 
     @Column(name = "date")
     private Date date;
 
     @Column(name = "quantity_of_items")
     private int quantityOfItems;
-
-    @Column(name = "price")
-    private boolean price;
-
-    @Column(name = "iva")
-    private boolean iva;
 
     @Column(name = "total")
     private boolean total;
