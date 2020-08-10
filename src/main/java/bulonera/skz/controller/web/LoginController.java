@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class LoginController {
 
-
     private final UserController userController;
     private final SessionManager sessionManager;
 

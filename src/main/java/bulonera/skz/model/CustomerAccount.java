@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity(name = "customer_account")
 @NoArgsConstructor
@@ -20,6 +19,11 @@ public class CustomerAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name="id_user")
+    private  User user;
 
     @Column(name = "name", nullable = false)
     private String name;
