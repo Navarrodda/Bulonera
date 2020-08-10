@@ -30,5 +30,4 @@ public class CategoryByProduct {
     @JoinColumn(name="id_category")
     private  Category category;
 
-
 }

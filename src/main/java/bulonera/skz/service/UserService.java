@@ -17,6 +17,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -56,6 +58,17 @@ public class UserService {
         else
         {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE + ": Incorrect email or password.", HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+    public ResponseEntity<List<User>> bringAllUsers(){
+        List<User> users = this.userRepository.findAll();
+        if(users != null)
+        {
+            return  ResponseEntity.ok(users);
+        }
+        else {
+            return ResponseEntity.noContent().build();
         }
     }
 
