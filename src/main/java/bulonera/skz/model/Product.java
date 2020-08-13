@@ -25,7 +25,7 @@ public class Product {
     @JsonBackReference
     @JoinColumn(name="id_user")
     private  User user;
-
+    
     @Column(name = "name")
     private String name;
 
