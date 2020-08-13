@@ -7,6 +7,7 @@ import bulonera.skz.exceptions.UserException;
 import bulonera.skz.exceptions.ValidationException;
 import bulonera.skz.model.User;
 import bulonera.skz.model.enums.UserType;
+import bulonera.skz.projections.UserFilter;
 import bulonera.skz.projections.UsersFilter;
 import bulonera.skz.repository.UserRepository;
 import bulonera.skz.session.SessionManager;
@@ -28,6 +29,10 @@ public class UserService {
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public UserFilter getUser(Integer id){
+        return this.userRepository.getByUser(id);
     }
 
     public ResponseEntity addUser(User user){

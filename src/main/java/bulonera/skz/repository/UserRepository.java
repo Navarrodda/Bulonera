@@ -1,6 +1,7 @@
 package bulonera.skz.repository;
 
 import bulonera.skz.model.User;
+import bulonera.skz.projections.UserFilter;
 import bulonera.skz.projections.UsersFilter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -10,6 +11,9 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
+    @Query(value = "SELECT u.*, u.user_type as userType FROM users u WHERE u.id  = ?1 ", nativeQuery = true)
+    UserFilter getByUser(Integer id);
+
     @Query(value = "SELECT * from users u where u.email = ?1", nativeQuery = true)
     User getByEmail(String email);
 

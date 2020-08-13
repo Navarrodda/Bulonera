@@ -6,6 +6,7 @@ import bulonera.skz.exceptions.InvalidLoginException;
 import bulonera.skz.exceptions.UserException;
 import bulonera.skz.exceptions.ValidationException;
 import bulonera.skz.model.User;
+import bulonera.skz.projections.UserFilter;
 import bulonera.skz.projections.UsersFilter;
 import bulonera.skz.service.UserService;
 import bulonera.skz.session.SessionManager;
@@ -38,5 +39,9 @@ public class UserController {
 
     public ResponseEntity<List<UsersFilter>> bringAllUsers(){
         return this.userService.bringAllUsers();
+    }
+
+    public UserFilter getUser(Integer id){
+        return this.userService.getUser(id);
     }
 }
