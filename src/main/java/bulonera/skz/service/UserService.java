@@ -7,6 +7,7 @@ import bulonera.skz.exceptions.UserException;
 import bulonera.skz.exceptions.ValidationException;
 import bulonera.skz.model.User;
 import bulonera.skz.model.enums.UserType;
+import bulonera.skz.projections.UsersFilter;
 import bulonera.skz.repository.UserRepository;
 import bulonera.skz.session.SessionManager;
 import bulonera.skz.tools.HashPassword;
@@ -61,8 +62,8 @@ public class UserService {
         }
     }
 
-    public ResponseEntity<List<User>> bringAllUsers(){
-        List<User> users = this.userRepository.findAll();
+    public ResponseEntity<List<UsersFilter>> bringAllUsers(){
+        List<UsersFilter> users = this.userRepository.getByUsers();
         if(users != null)
         {
             return  ResponseEntity.ok(users);

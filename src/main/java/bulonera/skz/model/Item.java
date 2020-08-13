@@ -22,6 +22,11 @@ public class Item {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
+    @JoinColumn(name="id_user")
+    private  User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     @JoinColumn(name="id_product")
     private  Product product;
 

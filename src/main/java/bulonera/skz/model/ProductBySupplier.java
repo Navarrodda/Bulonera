@@ -28,4 +28,5 @@ public class ProductBySupplier {
     @JsonBackReference
     @JoinColumn(name="id_product")
     private  Product product;
+
 }

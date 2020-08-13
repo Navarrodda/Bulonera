@@ -18,6 +18,11 @@ public class Bill {
     @Column(name = "id")
     private Integer id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name="id_user")
+    private  User user;
+
     @Column(name = "number")
     private int number;
 

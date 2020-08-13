@@ -6,6 +6,7 @@ import bulonera.skz.exceptions.InvalidLoginException;
 import bulonera.skz.exceptions.UserException;
 import bulonera.skz.exceptions.ValidationException;
 import bulonera.skz.model.User;
+import bulonera.skz.projections.UsersFilter;
 import bulonera.skz.service.UserService;
 import bulonera.skz.session.SessionManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class UserController {
         return this.userService.login(loginRequestDto, sessionManager);
     }
 
-    public ResponseEntity<List<User>> bringAllUsers(){
+    public ResponseEntity<List<UsersFilter>> bringAllUsers(){
         return this.userService.bringAllUsers();
     }
 }
